@@ -37,6 +37,7 @@
 
 import os
 import pandas as pd
+import numpy as np
 import torch
 import torch.nn as nn
 
@@ -121,7 +122,7 @@ def main(config):
     #Here we select the model
     #config.test_model_dir = "/neurospin/dico/cmendoza/Runs/01_betavae_sulci_crops/Output/2025-05-28/23-11-30"
     #config.test_model_dir = "/neurospin/dico/cmendoza/Runs/01_betavae_sulci_crops/Output/2025-06-05/17-32-49"
-    config.test_model_dir = "/neurospin/dico/fred/Runs/01_betaVAE/Output/2025-09-16/15-17-52/CCD"
+    config.test_model_dir = "/neurospin/dico/fred/Runs/01_betaVAE/Output/2025-10-30/11-29-00/epilepsy_PBS"
 
     model_dir = os.path.join(config.test_model_dir, 'checkpoint.pt') 
     #model_dir = os.path.join(config.test_model_dir, 'vae.pt')
@@ -143,9 +144,14 @@ def main(config):
 
     tester = ModelTester(model=model, dico_set_loaders=dico_set_loaders,
                          kl_weight=config.kl, loss_func=criterion,
-                         n_latent=config.n, depth=config.depth,save_dir=config.test_model_dir)
+                         n_latent=config.n, depth=config.depth, save_dir=config.test_model_dir)
     print('Tester',tester)
-    results = tester.test()[0]
+    results, output, input = tester.test()
+    
+    np.save(os.path.join(config.test_model_dir, 'outputs.npy'), output)
+    np.save(os.path.join(config.test_model_dir, 'inputs.npy'), input)
+
+    print("end of test")
     #print(results)
     '''
     for k in results['test']:

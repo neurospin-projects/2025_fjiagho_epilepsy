@@ -1,0 +1,8 @@
+# @package _global_
+dataset_name: SOr_right_UKB
+data_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/S.Or./mask/Rskeleton.npy
+subject_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/S.Or./mask/Rskeleton_subject.csv
+save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
+in_shape: [1, 26, 34, 23]
+subjects_to_remove: None
+remove_subjects: False

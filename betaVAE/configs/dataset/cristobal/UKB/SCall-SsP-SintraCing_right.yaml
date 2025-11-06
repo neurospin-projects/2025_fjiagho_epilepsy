@@ -1,0 +1,8 @@
+# @package _global_
+dataset_name: SCall-SsP-SintraCing_right_UKB
+data_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/S.Call.-S.s.P.-S.intraCing./mask/Rskeleton.npy
+subject_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/S.Call.-S.s.P.-S.intraCing./mask/Rskeleton_subject.csv
+save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
+in_shape: [1, 15, 63, 45]
+subjects_to_remove: None
+remove_subjects: False

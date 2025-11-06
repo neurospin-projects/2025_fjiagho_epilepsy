@@ -185,6 +185,8 @@ class ModelTester():
         output_list = []
         recon_error = {}
         embeddings = {}
+        input_list=[]
+
         for loader_name, loader in self.dico_set_loaders.items():
             print('loader_name loader',loader_name,loader)
             self.model.eval()
@@ -199,10 +201,12 @@ class ModelTester():
                     outputs = self.model.decode(z)
                     #print(z.shape,outputs.shape)
                     recon_loss_val, kl_val, loss_val = vae_loss(outputs, target, z, logvar, self.loss_func,
-                                    kl_weight=self.kl_weight)                        
-                    outputs = torch.argmax(outputs, dim=1) # otherwise two values with cross entropy
+                                        kl_weight=self.kl_weight)                        
+                    #outputs = torch.argmax(outputs, dim=1) # otherwise two values with cross entropy
+                    outputs= torch.softmax(outputs, dim=1)
                     #print(recon_loss_val,z.shape)
-                    output_list.append(np.array(outputs.cpu().detach().numpy()).astype(bool))
+                    output_list.append(np.array(outputs.cpu().detach().numpy()))
+                    input_list.append(np.array(inputs.cpu().detach().numpy()))
                     if not os.path.exists(self.save_dir+'/subjects'):
                         os.mkdir(self.save_dir+'/subjects')
 
@@ -223,6 +227,7 @@ class ModelTester():
                         recon_error[str(path[k])] = [recon_loss_val.cpu().detach().numpy().item()]
                         embeddings[str(path[k])] = out_z
                         counter+=1
+                        
         print('Size',counter*16)
         results_recon_error = pd.DataFrame.from_dict(recon_error)
         results_recon_error = results_recon_error.T
@@ -235,8 +240,9 @@ class ModelTester():
         results_embeddings.to_csv(self.save_dir+'/Embeddings.csv')
 
         output = np.vstack(output_list)
+        input = np.vstack(input_list)
 
-        return results, output
+        return results, output, input
 
 """ OVERFLOW
     def test(self):

@@ -98,7 +98,8 @@ def train_vae(config, trainloader, valloader, root_dir=None):
             partial_recon_loss, partial_kl, loss = vae_loss(output, target, z,
                                     logvar, criterion,
                                     kl_weight=config.kl)
-            output = torch.argmax(output, dim=1)
+            #output = torch.argmax(output, dim=1)
+            output = torch.softmax(output, dim=1)
             loss.backward()
             optimizer.step()
 
@@ -110,7 +111,7 @@ def train_vae(config, trainloader, valloader, root_dir=None):
         recon_loss = recon_loss / epoch_steps
         kl_loss = kl_loss / epoch_steps
 
-        images = [inputs[0][0][10][:][:], output[0][10][:][:]]
+        images = [inputs[0][0][10][:][:], output[0][0][10][:][:]]
         grid = torchvision.utils.make_grid(images)
         writer.add_image('inputs', images[0].unsqueeze(0), epoch)
         writer.add_image('output', images[1].unsqueeze(0), epoch)

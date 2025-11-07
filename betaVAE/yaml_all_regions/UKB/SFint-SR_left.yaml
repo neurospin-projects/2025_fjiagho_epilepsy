@@ -1,8 +1,8 @@
 # @package _global_
 dataset_name: SFint-SR_left_UKB
-data_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/S.F.int.-S.R./mask/Lskeleton.npy
-subject_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/S.F.int.-S.R./mask/Lskeleton_subject.csv
-save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
+data_dir: ${dataset_folder}/UkBioBank40/crops/2mm/S.F.int.-S.R./mask/Lskeleton.npy
+subject_dir: ${dataset_folder}/UkBioBank40/crops/2mm/S.F.int.-S.R./mask/Lskeleton_subject.csv
+#save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
 in_shape: [1, 16, 55, 58]
 subjects_to_remove: None
 remove_subjects: False

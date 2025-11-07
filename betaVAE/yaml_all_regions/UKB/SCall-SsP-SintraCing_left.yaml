@@ -1,8 +1,8 @@
 # @package _global_
 dataset_name: SCall-SsP-SintraCing_left_UKB
-data_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/S.Call.-S.s.P.-S.intraCing./mask/Lskeleton.npy
-subject_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/S.Call.-S.s.P.-S.intraCing./mask/Lskeleton_subject.csv
-save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
+data_dir: ${dataset_folder}/UkBioBank40/crops/2mm/S.Call.-S.s.P.-S.intraCing./mask/Lskeleton.npy
+subject_dir: ${dataset_folder}/UkBioBank40/crops/2mm/S.Call.-S.s.P.-S.intraCing./mask/Lskeleton_subject.csv
+#save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
 in_shape: [1, 18, 80, 46]
 subjects_to_remove: None
 remove_subjects: False

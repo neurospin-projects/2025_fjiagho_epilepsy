@@ -1,8 +1,8 @@
 # @package _global_
 dataset_name: FIP-FIPPoCinf_right_UKB
-data_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/F.I.P.-F.I.P.Po.C.inf./mask/Rskeleton.npy
-subject_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/F.I.P.-F.I.P.Po.C.inf./mask/Rskeleton_subject.csv
-save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
+data_dir: ${dataset_folder}/UkBioBank40/crops/2mm/F.I.P.-F.I.P.Po.C.inf./mask/Rskeleton.npy
+subject_dir: ${dataset_folder}/UkBioBank40/crops/2mm/F.I.P.-F.I.P.Po.C.inf./mask/Rskeleton_subject.csv
+#save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
 in_shape: [1, 39, 54, 45]
 subjects_to_remove: None
 remove_subjects: False

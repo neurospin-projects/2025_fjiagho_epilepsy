@@ -1,9 +1,9 @@
 defaults:
  - _self_
  - dataset_localization: neurospin
- #- dataset: cristobal/SC-sylv_right_HCP
+ - dataset: cristobal/SC-sylv_right_ABCD
  #- dataset: cristobal/SC-sylv_right_UKB
- - dataset: cristobal/UKB/FCMpost-SpC_left
+ #- dataset: cristobal/UKB/FCMpost-SpC_left
  - model: BetaVAE
  - trainer: trainer
  - loss: CrossEntropy

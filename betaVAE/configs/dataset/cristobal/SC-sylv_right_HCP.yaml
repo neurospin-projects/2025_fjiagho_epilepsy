@@ -1,5 +1,5 @@
 # @package _global_
-dataset_name: STs-sylv_right_HCP
+dataset_name: SC-sylv_right_HCP
 data_dir: /neurospin/dico/data/deep_folding/current/datasets/hcp/crops/2mm/S.C.-sylv./mask/Rskeleton.npy
 subject_dir: /neurospin/dico/data/deep_folding/current/datasets/hcp/crops/2mm/S.C.-sylv./mask/Rskeleton_subject.csv
 save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output

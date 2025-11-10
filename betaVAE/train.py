@@ -151,8 +151,8 @@ def train_vae(config, trainloader, valloader, root_dir=None):
                 partial_recon_loss_val, partial_kl_val, loss = vae_loss(output, target,
                                         z, logvar, criterion,
                                         kl_weight=config.kl)
-                output = torch.argmax(output, dim=1)
-
+                #output = torch.argmax(output, dim=1)
+                output = torch.softmax(output, dim=1)
                 val_loss += loss.cpu().numpy()
                 recon_loss_val += partial_recon_loss_val
                 kl_val += partial_kl_val
@@ -162,7 +162,7 @@ def train_vae(config, trainloader, valloader, root_dir=None):
         kl_val = kl_val / val_steps
 
         images = [inputs[0][0][10][:][:],\
-                  output[0][10][:][:]]
+                  output[0][0][10][:][:]]
         writer.add_scalar('Loss/val', valid_loss, epoch)
         writer.add_scalar('KL Loss/val', kl_val, epoch)
         writer.add_scalar('recon Loss/val', recon_loss_val, epoch)

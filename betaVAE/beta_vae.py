@@ -192,7 +192,7 @@ class ModelTester():
             with torch.no_grad():
                 counter = 0
                 for inputs, path in loader:
-                    print('path',path,len(path))
+                    #print('path',path,len(path))
                     inputs = Variable(inputs).to(device, dtype=torch.float32)
                     target = torch.squeeze(inputs, dim=1).long()
 
@@ -204,8 +204,20 @@ class ModelTester():
                     #outputs = torch.argmax(outputs, dim=1) # otherwise two values with cross entropy
                     outputs= torch.softmax(outputs, dim=1)
                     #print(recon_loss_val,z.shape)
+
+
                     output_list.append(np.array(outputs.cpu().detach().numpy()))
                     input_list.append(np.array(inputs.cpu().detach().numpy()))
+
+                    '''
+                    arr_out = outputs.cpu().detach().numpy()
+                    #print(arr_out.shape)
+                    output_list = np.vstack([output_list, arr_out])
+
+                    arr_in = inputs.cpu().detach().numpy()
+                    #print(arr_in.shape)
+                    input_list = np.vstack([input_list, arr_in])
+                    '''
                     if not os.path.exists(self.save_dir+'/subjects'):
                         os.mkdir(self.save_dir+'/subjects')
 
@@ -240,7 +252,10 @@ class ModelTester():
 
         output = np.vstack(output_list)
         input = np.vstack(input_list)
-
+        '''
+        output= output_list[1:,:,:,:,:]
+        input= input_list[1:,:,:,:,:]
+        '''
         return results, output, input
 
 """ OVERFLOW

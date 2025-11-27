@@ -1,7 +1,7 @@
 #!/bin/bash
 # === CONFIGURATION ===
 A="/neurospin/dico/fred/Runs/01_betaVAE/Program/2023_jlaval_STSbabies/betaVAE/configs/dataset/cristobal"       # dossier A contenant UKB, hcp, epilepsy_PBS
-B="/neurospin/dico/data/deep_folding/models/2025-11-10"       # dossier B contenant les sous-dossiers correspondants
+B="/neurospin/tmp/fred/models/2025-11-10"       # dossier B contenant les sous-dossiers correspondants
 SCRIPT="generate_embeddings.py"         # script Python à exécuter
 
 # === BOUCLE PRINCIPALE ===
@@ -36,6 +36,13 @@ for subfolder in UKB hcp epilepsy_PBS; do
                 ;;
         esac
 
+        # Vérifie l'existence de inputs.npy
+        if [ -f "$arg2/inputs.npy" ]; then
+            echo "⏩ Fichier déjà présent : $arg2/inputs.npy → SKIP"
+            continue
+        else
+            echo "▶️ Aucun inputs.npy trouvé → Exécution du script"
+        fi
         
         # Premier argument : chemin du .yaml sans extension
         arg1="cristobal/${subfolder}/${fname}"

@@ -1,7 +1,7 @@
 # @package _global_
-dataset_name: REPLACE_DATASET_epilepsy_PBS
-data_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/REPLACE_CROP_NAME/mask/REPLACE_SIDEskeleton.npy
-subject_dir: ${dataset_folder}/epilepsy_PBS/crops/2mm/REPLACE_CROP_NAME/mask/REPLACE_SIDEskeleton_subject.csv
+dataset_name: REPLACE_DATASET_PEPR_Marseille
+data_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/REPLACE_CROP_NAME/mask/REPLACE_SIDEskeleton.npy
+subject_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/REPLACE_CROP_NAME/mask/REPLACE_SIDEskeleton_subject.csv
 #save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
 in_shape: [1, REPLACE_SIZEX, REPLACE_SIZEY, REPLACE_SIZEZ]
 subjects_to_remove: None

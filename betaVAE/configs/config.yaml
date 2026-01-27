@@ -1,7 +1,7 @@
 defaults:
  - _self_
  - dataset_localization: neurospin
- - dataset: cristobal/UKB/STs_right
+ #- dataset: cristobal/UKB/STs_right
  #- dataset: cristobal/SC-sylv_right_UKB
  #- dataset: cristobal/hcp/FCLp-subsc-FCLa-INSULA_left
  # configs/config.yaml

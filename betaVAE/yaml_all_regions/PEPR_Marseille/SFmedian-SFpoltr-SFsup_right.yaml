@@ -1,0 +1,8 @@
+# @package _global_
+dataset_name: SFmedian-SFpoltr-SFsup_right_PEPR_Marseille
+data_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/S.F.median-S.F.pol.tr.-S.F.sup./mask/Rskeleton.npy
+subject_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/S.F.median-S.F.pol.tr.-S.F.sup./mask/Rskeleton_subject.csv
+#save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
+in_shape: [1, 30, 52, 55]
+subjects_to_remove: None
+remove_subjects: False

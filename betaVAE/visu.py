@@ -40,7 +40,9 @@ def build_gradient(pal):
 
 def load_and_prepare_volume(anatomist, file_path, referential, palette=None, min_val=None, max_val=None):
     """Load a volume into Anatomist, wrap it into a fusion object, assign referential."""
+    print('AIMS NOT READ')
     vol = aims.read(file_path)
+    print('AIMS JUST READ')
     a_obj = anatomist.toAObject(vol)
     fusion = anatomist.fusionObjects(objects=[a_obj], method='VolumeRenderingFusionMethod')
 

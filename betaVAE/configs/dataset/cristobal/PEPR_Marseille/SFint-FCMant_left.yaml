@@ -1,0 +1,8 @@
+# @package _global_
+dataset_name: SFint-FCMant_left_PEPR_Marseille
+data_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/S.F.int.-F.C.M.ant./mask/Lskeleton.npy
+subject_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/S.F.int.-F.C.M.ant./mask/Lskeleton_subject.csv
+#save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
+in_shape: [1, 16, 55, 52]
+subjects_to_remove: None
+remove_subjects: False

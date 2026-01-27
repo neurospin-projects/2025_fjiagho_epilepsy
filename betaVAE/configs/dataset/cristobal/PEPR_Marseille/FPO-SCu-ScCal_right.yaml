@@ -1,0 +1,8 @@
+# @package _global_
+dataset_name: FPO-SCu-ScCal_right_PEPR_Marseille
+data_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/F.P.O.-S.Cu.-Sc.Cal./mask/Rskeleton.npy
+subject_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/F.P.O.-S.Cu.-Sc.Cal./mask/Rskeleton_subject.csv
+#save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
+in_shape: [1, 26, 42, 55]
+subjects_to_remove: None
+remove_subjects: False

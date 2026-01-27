@@ -1,0 +1,8 @@
+# @package _global_
+dataset_name: SsP-SPaint_left_PEPR_Marseille
+data_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/S.s.P.-S.Pa.int./mask/Lskeleton.npy
+subject_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/S.s.P.-S.Pa.int./mask/Lskeleton_subject.csv
+#save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
+in_shape: [1, 27, 43, 56]
+subjects_to_remove: None
+remove_subjects: False

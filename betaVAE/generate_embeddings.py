@@ -123,7 +123,7 @@ def main(config):
     #Here we select the model
     #config.test_model_dir = "/neurospin/dico/cmendoza/Runs/01_betavae_sulci_crops/Output/2025-05-28/23-11-30"
     #config.test_model_dir = "/neurospin/dico/cmendoza/Runs/01_betavae_sulci_crops/Output/2025-06-05/17-32-49"
-    config.test_model_dir = "/neurospin/tmp/fred/models/2025-11-10/STs_right_UKB_18-17-47_128"
+    #config.test_model_dir = "/neurospin/tmp/fred/models/2025-11-10/STs_right_UKB_18-17-47_128"
 
     model_dir = os.path.join(config.test_model_dir, 'checkpoint.pt') 
     #model_dir = os.path.join(config.test_model_dir, 'vae.pt')

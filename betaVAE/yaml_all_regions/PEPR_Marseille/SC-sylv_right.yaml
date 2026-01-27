@@ -1,0 +1,8 @@
+# @package _global_
+dataset_name: SC-sylv_right_PEPR_Marseille
+data_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/S.C.-sylv./mask/Rskeleton.npy
+subject_dir: ${dataset_folder}/PEPR_Marseille/crops/2mm/S.C.-sylv./mask/Rskeleton_subject.csv
+#save_dir: /neurospin/dico/fred/Runs/01_betaVAE/Output
+in_shape: [1, 42, 34, 49]
+subjects_to_remove: None
+remove_subjects: False

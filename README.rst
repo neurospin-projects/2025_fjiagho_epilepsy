@@ -2,9 +2,7 @@
 Beta-VAE anomaly detection using cortical folding representations
 ###########################################################################
 
-In this project, the main goal is to detect epileptic foci using a beta-VAE model.
-
-For this 
+In this project, the main goal is to detect epileptic foci using a beta-VAE model. For this, I trained a beta-VAE on a dataset with 42000 subjects (UKB). Then, I used successively two epileptic databases: epilepsy_PBS (with 40 patients), and PEPR_MArseille (with 1000 patients). All the codes are available on "betaVAE" repository. 
 
 This repository is based on https://github.com/neurospin-projects/2023_jlaval_STSbabies. It aims to apply the self-supervised deep learning pipepline to preterm-specific folding pattern analysis and explore explainability methods.
 Official Pytorch implementation for Unsupervised Learning and Cortical Folding (`paper <https://openreview.net/forum?id=ueRZzvQ_K6u>`_).

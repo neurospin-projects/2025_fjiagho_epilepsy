@@ -48,18 +48,18 @@ same file as priviously: "visu_all_regions".
 * "all_the_regions" containing the analyze of all the sulcal regions,
 
 *  "For each subject", where the anomaly 
-detection metho is applied for some patients, 
+detection method is applied for some patients, 
 
 * and "histogram_non_zero", where we do the Quality Check.
 
-. Thirdly, in "Selected subjects", we made the study on only the 825 patients selected after the Quality Check. 
+. Thirdly, in "Selected subjects", we made the study on only the 825 patients selected after the Quality Check (The indexes of the selected subjects are in ./PEPR_Marseille/All the subjects/histogram_non_zero/index_to_save.npy). 
 
 * First of all, we analyze the central sulcus in "SC-sylv-right". 
 
 * Then, we classify the patients according to their lesion type in the subfolder "Lesion_type". 
 
 * After that, we make a study on all the regions in
-"all_the_regions". 
+"all_the_regions". In particular, the redidualization of all the latent spaces are done in the file Residualization_SVM.ipynb
 
 * Then, we visualize the correlation between our three metrics on the central sulcus in the repository "comparaison des métriques". In particular, the plot of the slide 25 in the "café sillon presentation" is obtained while running the file "Residualisation_comparaison.ipynb"
 
@@ -75,7 +75,7 @@ containing, for every patients in F-TRACT, the value of the Chamfer distance and
 * Then, in the repository "Study some patients", we apply the anomaly detection method for some pateints. 
 
 * Finally, in the folder "Evaluation_metrics_with_v4", we compute
-some evaluation metrics for our methods. (v4 meaning the 4th version of the code by Denis, which is the file "show_sulcal_point_v4 inside the folder "Evaluation_metrics_with_v4". This file return a figure as on the slide 28)
+some evaluation metrics for our methods. (v4 meaning the 4th version of the code by Denis, which is the file "show_sulcal_point_v4 inside the folder "Evaluation_metrics_with_v4". This file return a figure as on the slide 28). In particular, in the folder "Classification_precentral_temporal, we try to solve the easier task of classifying subject among those with a problem on the temporal region and all the othes (using the precentral latent space)
 
 
 # Link between the notebooks and the figures in the "café sillon" presentation
@@ -94,6 +94,14 @@ We are in the folder "BETAVAE"
 * To train the beta-VAE, we should first change the configs in /configs/config.yaml, by mentionning the dataset(and the sulcal region). For this, the corresponding yaml file must exist in configs/dataset/cristobal. (There is a file which help to create the yaml files for each region for a particular dataset. It's /yaml_all_regions/create_yaml.py. It use the file /yaml_all_regions/ref.yaml as reference). After changing the config, we have to run " python3 main.py n=75" (n being the size of the latent space.)
 
 * To generate the embeddings, we have to first check if the configs are good (as previously), and eventually change the variable config.test_model_dir in the line 124 in generate_embeddings.py, then run "python3 generate_embeddings.py n=75"
+
+
+# Slurm on Jean-Zay
+
+To create slurm 
+files=$(ls ../2023_jlaval_STSbabies/betaVAE/configs/dataset/cristobal/UKB/)
+
+for f in $files; do ./create\_slurm\_from\_template.sh ${f%.*}; done
 
 
 # Note

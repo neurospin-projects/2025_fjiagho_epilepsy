@@ -66,4 +66,4 @@ Then, the Grad-CAM heatmaps are obtained running:
     cd contrastive
     python3 evaluation/supervised_pipeline.py
 
-And can be visualised in : contrastive/notebooks/julien/plot_grad_cam.ipynb
+For more information, refer to the more detailed README : `detailed README.md <betaVAE/notebooks/fred/README.md>`_

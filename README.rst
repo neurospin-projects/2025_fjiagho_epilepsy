@@ -32,6 +32,14 @@ Then, install a virtual environment through the following command lines:
     pip3 install --upgrade pip
     pip3 install -e .
 
+Alternatively, you can use the requirements file:
+
+.. code-block:: shell
+
+    python3 -m venv venv
+    . venv/bin/activate
+    pip3 install -r requirements_env.txt
+
 Note that you might need a `BrainVISA <https://brainvisa.info>`_ environment to run
 some of the functions or notebooks.
 

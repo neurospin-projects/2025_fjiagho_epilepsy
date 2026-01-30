@@ -20,7 +20,7 @@ First, the repository can be cloned thanks to:
 
 .. code-block:: shell
 
-    git clone https://github.com/neurospin-projects/2023_jlaval_STSbabies/
+    git clone https://github.com/neurospin-projects/2025_fjiagho_epilepsy/
     cd 2023_jlaval_STSbabies
 
 Then, install a virtual environment through the following command lines:

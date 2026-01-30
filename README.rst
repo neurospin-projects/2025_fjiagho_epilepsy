@@ -53,6 +53,7 @@ Train the beta-VAE
 To train the beta-VAE, change the configs file, then run
 
 .. code-block:: shell
+
     cd betaVAE
     python3 main.py 
 
